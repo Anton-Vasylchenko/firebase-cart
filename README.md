@@ -1,6 +1,6 @@
 # firebase-cart
 
-A small project where I practiced React and Firebase
+A small project where I practiced React, Redux Toolkit and Firebase
 
 # DEMO
 
