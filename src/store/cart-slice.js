@@ -10,6 +10,7 @@ const cartSlice = createSlice({
     initialState: initialCartState,
     reducers: {
         replaceCart(state, action) {
+            console.log(action.payload.items);
             state.items = action.payload.items;
         },
         addItem(state, { payload }) {
@@ -57,6 +58,10 @@ const cartSlice = createSlice({
 
             const newItems = items.filter(item => item.id !== action.payload);
             state.items = [...newItems];
+
+            if (state.items.length) {
+                state.changed = false;
+            }
         }
     }
 })

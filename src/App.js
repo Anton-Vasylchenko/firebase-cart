@@ -7,8 +7,6 @@ import Products from './components/Shop/Products';
 import Notification from './components/UI/Notification';
 import { sendCartData, fetchCartData } from './store/cart-actions';
 
-let isInitial = true;
-
 function App() {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart);
@@ -19,11 +17,6 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (isInitial) {
-      isInitial = false;
-      return;
-    }
-
     if (cart.changed) {
       dispatch(sendCartData(cart));
     }
